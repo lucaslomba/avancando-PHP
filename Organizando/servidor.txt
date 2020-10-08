@@ -1,0 +1,4 @@
+-> Não é mais necessario uso do Xampp
+
+run:
+-> php -S localhost:8000

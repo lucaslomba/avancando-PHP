@@ -27,12 +27,40 @@ $contasCorrentes['444.969.008-74'] = sacar($contasCorrentes['444.969.008-74'], 5
 //Depositando dinheiro
 $contasCorrentes['444.969.008-74'] = depositar($contasCorrentes['444.969.008-74'], 600);
 
+//Deletar cliente do array
+unset($contasCorrentes['444.969.008-74']);
 
-//Exibindo dados
-foreach($contasCorrentes as $cpf => $conta){
-    exibeMensagem("$cpf $conta[titular] $conta[saldo]");
 
-    //or
+// echo "<ul>";
+// //Exibindo dados
+// foreach($contasCorrentes as $cpf => $conta){
+//     //['titular' => $titular, 'saldo' => $saldo] = $conta;
+//     exibeConta($conta);
 
-    exibeMensagem("$cpf {$conta['titular']} {$conta['saldo']}");
-}
+//     //or
+
+//     //exibeMensagem("$cpf {$conta['titular']} {$conta['saldo']}");
+// }
+
+// echo "</ul>";
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contas correntes</h1>
+
+    <dl>
+        <?php foreach($contasCorrentes as $cpf => $conta) {?>
+            <dt><?= $conta['titular']; ?> - <?= $cpf; ?></dt>
+            <dd><?= "Saldo: $conta[saldo]"; ?></dd>
+        <?php } ?>
+    </dl>
+</body>
+</html>

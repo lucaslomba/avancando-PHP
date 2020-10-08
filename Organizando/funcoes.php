@@ -2,7 +2,7 @@
 
 //Criando função de mensagem
 function exibeMensagem(string $mensagem){
-    echo $mensagem . PHP_EOL;
+    echo $mensagem . '<br>';
 }
 
 //Criando função de sacar
@@ -27,4 +27,10 @@ function depositar(array $conta, float $valorADepositar):array
     }
 
     return $conta;
+}
+
+function exibeConta(array $conta)
+{
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    echo "<li>Titular: $titular. Saldo: $saldo</li>";
 }
